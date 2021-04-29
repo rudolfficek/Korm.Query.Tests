@@ -84,7 +84,7 @@ namespace Korm.Query.Tests.QuerieTests
 
         // here should be also not nullable data mapped in nullable record.
         [Fact]
-        public void HaveDataWithMutableNullColumn_MappedAsRecordMutable()
+        public void HaveDataWithNullColumn_MappedAsRecordMutable()
         {
             var result = GetAllFromNullablesByQuery<Models.NullableRecordMutable>();
 
