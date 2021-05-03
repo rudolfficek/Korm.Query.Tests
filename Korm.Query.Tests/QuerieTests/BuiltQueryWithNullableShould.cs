@@ -7,11 +7,11 @@ using Xunit.Abstractions;
 namespace Korm.Query.Tests.QuerieTests
 {
     [Collection("Korm")]
-    public class BuildQueryWithNullableShould
+    public class BuiltQueryWithNullableShould
     {
         private readonly DatabaseFixture _fixture;
         private readonly ITestOutputHelper _output;
-        public BuildQueryWithNullableShould(DatabaseFixture fixture, ITestOutputHelper output)
+        public BuiltQueryWithNullableShould(DatabaseFixture fixture, ITestOutputHelper output)
         {
             _fixture = fixture;
             _output = output;

@@ -37,7 +37,7 @@ namespace Korm.Query.Tests
 
         #endregion
 
-        #region Nullables models
+        #region Nullables
 
         /// <summary>
         /// Nullable record model.
@@ -88,20 +88,5 @@ namespace Korm.Query.Tests
         }
 
         #endregion
-
-        //public record NullableNotNullableRecord(long? NotNullableId, string Name, long NullableId, int Number);
-
-        //public record NullableNotNullableRecordMutable(string Name, long NullableId, int Number)
-        //{
-        //    public long? NullableIdCol { get; set; }
-        //}
-
-        //public class NullableNotNullableClass
-        //{
-        //    public long? NullableId { get; set; }
-        //    public string Name { get; set; }
-        //    public long Id { get; set; }
-        //    public int Number { get; set; }
-        //}
     }
 }
