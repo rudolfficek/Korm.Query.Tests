@@ -22,6 +22,7 @@ namespace Korm.Query.Tests
             Seed_Script
         };
 
+
         private const string CreateTable_NotNullables =
             @"CREATE TABLE [dbo].[NotNullables](
                 [Id] [bigint] NOT NULL,
@@ -36,6 +37,7 @@ namespace Korm.Query.Tests
                     [Id] [bigint] NOT NULL,
                     [Number] [int] NOT NULL,
                     [NullableIdCol] [bigint] NULL,
+                    [NullableStringCol] [nvarchar](255) NULL,
 
                     CONSTRAINT [PK_Nullables] PRIMARY KEY CLUSTERED ([Id] ASC)
                     WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -52,11 +54,12 @@ namespace Korm.Query.Tests
             @"  INSERT INTO [dbo].[NotNullables] ([Id], [Name]) VALUES (1, 'Sausage of Lovers')
                 INSERT INTO [dbo].[NotNullables] ([Id], [Name]) VALUES (2, 'One Time Next Time')
 
-                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol]) VALUES (1, 10, 1)
-                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol]) VALUES (2, 20, 1)
-                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol]) VALUES (3, 30, 2)
-                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol]) VALUES (4, 60, NULL)
-                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol]) VALUES (5, 70, NULL)";
+                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol], [NullableStringCol]) VALUES (1, 10, 1, NULL)
+                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol], [NullableStringCol]) VALUES (2, 20, 1, 'Text')
+                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol], [NullableStringCol]) VALUES (3, 30, 2, 'Text')
+                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol], [NullableStringCol]) VALUES (4, 60, NULL, 'Text')
+                INSERT INTO [dbo].[Nullables] ([Id], [Number], [NullableIdCol], [NullableStringCol]) VALUES (5, 70, NULL, 'Text')";
+
 
         #endregion
 

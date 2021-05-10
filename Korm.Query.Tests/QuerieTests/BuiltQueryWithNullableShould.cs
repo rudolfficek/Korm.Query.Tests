@@ -19,14 +19,14 @@ namespace Korm.Query.Tests.QuerieTests
 
         public IEnumerable<T> GetFromNullablesButWithNotNullOnlyByQuery<T>()
             => _fixture.Db.Query<T>()
-                .Select("Id", "Number", "NullableIdCol")
+                .Select("Id", "Number", "NullableIdCol", "NullableStringCol")
                 .From("Nullables")
                 .Where("NullableIdCol IS NOT NULL")
                 .ToList();
 
         public IEnumerable<T> GetAllFromNullablesByQuery<T>()
             => _fixture.Db.Query<T>()
-                .Select("Id", "Number", "NullableIdCol")
+                .Select("Id", "Number", "NullableIdCol", "NullableStringCol")
                 .From("Nullables")
                 .ToList();
 
